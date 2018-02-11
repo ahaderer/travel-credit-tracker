@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <title th:text="${title}">Home</title>
 </head>
 <body>
+<h1 th:text="${title}">Add A Travel Credit</h1>
+
+<!--
+<ul>
+    <li th:each="credit : ${credits}" th:text="${credit}"></li>
+</ul>
+-->
+
+<form method="post">
+    <input type="text" name="credit" />
+    <input type="submit" value="Add Credit" />
+</form>
 
 </body>
 </html>
