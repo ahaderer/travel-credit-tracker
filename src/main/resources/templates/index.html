@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head>
-    <meta charset="UTF-8" />
-    <title th:text="${title}">Home</title>
-    <link rel="stylesheet" href="/css/main.css" />
-</head>
+<head th:replace="fragments :: head"></head>
 <body>
+
+<nav th:replace="fragments :: nav"></nav>
+
 <h1 th:text="${title}">Travel Credit Tracker</h1>
 
 <p>Please sign up or <a href="/user/login">login</a> to access your travel credits.</p>
