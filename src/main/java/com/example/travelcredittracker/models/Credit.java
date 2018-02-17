@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class Credit {
 
-    private int id;
+//    private int id;
 
     @NotNull
     private String traveler;
@@ -13,25 +13,25 @@ public class Credit {
     @NotNull
     private String airline;
 
-    @NotNull
-    private String confirmationNumber;
-
-    @NotNull
-    private int ticketNumber;
-
-    @NotNull
-    private Date purchDate;
-
-    @NotNull
-    private Date cancelDate;
-
-    @NotNull
-    private Date expirationDate;
-
-    @NotNull
-    private int creditAmount;
-
-    private String creditNotes;
+//    @NotNull
+//    private String confirmationNumber;
+//
+//    @NotNull
+//    private int ticketNumber;
+//
+//    @NotNull
+//    private Date purchDate;
+//
+//    @NotNull
+//    private Date cancelDate;
+//
+//    @NotNull
+//    private Date expirationDate;
+//
+//    @NotNull
+//    private int creditAmount;
+//
+//    private String creditNotes;
 
     public Credit() {
     }
@@ -40,16 +40,16 @@ public class Credit {
     public Credit(String traveler, String airline, String confirmationNumber, int ticketNumber, Date purchDate, Date cancelDate, Date expirationDate, int creditAmount, String creditNotes) {
         this.traveler = traveler;
         this.airline = airline;
-        this.confirmationNumber = confirmationNumber;
-        this.ticketNumber = ticketNumber;
-        this.purchDate = purchDate;
-        this.expirationDate = expirationDate;
-        this.creditAmount = creditAmount;
+//        this.confirmationNumber = confirmationNumber;
+//        this.ticketNumber = ticketNumber;
+//        this.purchDate = purchDate;
+//        this.expirationDate = expirationDate;
+//        this.creditAmount = creditAmount;
     }
 
-    public int getId() {
-        return id;
-    }
+//    public int getId() {
+//        return id;
+//    }
 
     public String getTraveler() {
         return traveler;
@@ -66,60 +66,60 @@ public class Credit {
     public void setAirline(String airline) {
         this.airline = airline;
     }
-
-    public String getConfirmationNumber() {
-        return confirmationNumber;
-    }
-
-    public void setConfirmationNumber(String confirmationNumber) {
-        this.confirmationNumber = confirmationNumber;
-    }
-
-    public int getTicketNumber() {
-        return ticketNumber;
-    }
-
-    public void setTicketNumber(int ticketNumber) {
-        this.ticketNumber = ticketNumber;
-    }
-
-    public Date getPurchDate() {
-        return purchDate;
-    }
-
-    public void setPurchDate(Date purchDate) {
-        this.purchDate = purchDate;
-    }
-
-    public Date getCancelDate() {
-        return cancelDate;
-    }
-
-    public void setCancelDate(Date cancelDate) {
-        this.cancelDate = cancelDate;
-    }
-
-    public Date getExpirationDate() {
-        return expirationDate;
-    }
-
-    public void setExpirationDate(Date expirationDate) {
-        this.expirationDate = expirationDate;
-    }
-
-    public int getCreditAmount() {
-        return creditAmount;
-    }
-
-    public void setCreditAmount(int creditAmount) {
-        this.creditAmount = creditAmount;
-    }
-
-    public String getCreditNotes() {
-        return creditNotes;
-    }
-
-    public void setCreditNotes(String creditNotes) {
-        this.creditNotes = creditNotes;
-    }
+//
+//    public String getConfirmationNumber() {
+//        return confirmationNumber;
+//    }
+//
+//    public void setConfirmationNumber(String confirmationNumber) {
+//        this.confirmationNumber = confirmationNumber;
+//    }
+//
+//    public int getTicketNumber() {
+//        return ticketNumber;
+//    }
+//
+//    public void setTicketNumber(int ticketNumber) {
+//        this.ticketNumber = ticketNumber;
+//    }
+//
+//    public Date getPurchDate() {
+//        return purchDate;
+//    }
+//
+//    public void setPurchDate(Date purchDate) {
+//        this.purchDate = purchDate;
+//    }
+//
+//    public Date getCancelDate() {
+//        return cancelDate;
+//    }
+//
+//    public void setCancelDate(Date cancelDate) {
+//        this.cancelDate = cancelDate;
+//    }
+//
+//    public Date getExpirationDate() {
+//        return expirationDate;
+//    }
+//
+//    public void setExpirationDate(Date expirationDate) {
+//        this.expirationDate = expirationDate;
+//    }
+//
+//    public int getCreditAmount() {
+//        return creditAmount;
+//    }
+//
+//    public void setCreditAmount(int creditAmount) {
+//        this.creditAmount = creditAmount;
+//    }
+//
+//    public String getCreditNotes() {
+//        return creditNotes;
+//    }
+//
+//    public void setCreditNotes(String creditNotes) {
+//        this.creditNotes = creditNotes;
+//    }
 }

@@ -6,12 +6,20 @@
 
 <h1 th:text="${title}">My Credits</h1>
 
-<h3 th:unless="${credits} and ${credits.size()}">No credits added.</h3>
+<!--<h3 th:unless="${credits} and ${credits.size()}">No credits added.</h3>-->
+<h3 th:unless="${hashMapCredits} and ${hashMapCredits.size()}">No credits added.</h3>
 
 <a href="/credits/add">Add a credit</a>
 
+<table>
+    <tr th:each="credit : ${hashMapCredits}">
+        <td th:text="${credit.key}">Traveler</td>
+        <td th:text="${credit.value}">Airline</td>
+    </tr>
+</table>
+
 <ul>
-    <li th:each="credit : ${credits}" th:text="${credit}"></li>
+    <li th:each="credit : ${hashMapCredits}" th:text="${credit.key}"></li>
 </ul>
 
 </body>
