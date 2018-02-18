@@ -6,21 +6,42 @@
 
 <h1 th:text="${title}">My Credits</h1>
 
-<!--<h3 th:unless="${credits} and ${credits.size()}">No credits added.</h3>-->
-<h3 th:unless="${hashMapCredits} and ${hashMapCredits.size()}">No credits added.</h3>
+<h3 th:unless="${credits} and ${credits.size()}">No credits added.</h3>
 
-<a href="/credits/add">Add a credit</a>
+<a href="/credits/add">Add a credit</a> |
+<a href="/credits/remove">Remove a credit</a>
+
+<br /><br />
 
 <table>
-    <tr th:each="credit : ${hashMapCredits}">
-        <td th:text="${credit.key}">Traveler</td>
-        <td th:text="${credit.value}">Airline</td>
+    <tr>
+    <td>ID</td>
+    <td>Traveler</td>
+    <td>Airline</td>
+    <td>Confirmation #</td>
+    <td>Ticket #</td>
+    <td>Purchase Date</td>
+    <td>Cancellation Date</td>
+    <td>Expiration Date</td>
+    <td>Credit Amount</td>
+    <td>Notes</td>
+    </tr>
+    <tr th:each="credit : ${credits}">
+        <td th:text="${credit.id}"></td>
+        <td th:text="${credit.traveler}"></td>
+        <td th:text="${credit.airline}"></td>
+        <td th:text="${credit.confirmationNumber}"></td>
+        <td th:text="${credit.ticketNumber}"></td>
+        <td th:text="${credit.purchaseDate}"></td>
+        <td th:text="${credit.cancelDate}"></td>
+        <td th:text="${credit.expirationDate}"></td>
+        <td th:text="${credit.creditAmount}"></td>
+        <td th:text="${credit.creditNotes}"></td>
+        <td><a th:href="@{'/credits/edit/' + ${credit.id}}">edit</a></td>
     </tr>
 </table>
 
-<ul>
-    <li th:each="credit : ${hashMapCredits}" th:text="${credit.key}"></li>
-</ul>
+
 
 </body>
 </html>

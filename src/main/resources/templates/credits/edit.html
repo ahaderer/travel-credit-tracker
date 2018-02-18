@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<nav th:replace="fragments :: nav"></nav>
+
+<h1>Edit A Travel Credit</h1>
+
+<form method="post">
+    Traveler Name:
+    <input type="text" name="traveler" /><br />
+    Airline:
+    <input type="text" name="airline" /><br />
+    Confirmation #:
+    <input type="text" name="confirmationNumber" /><br />
+    Ticket #:
+    <input type="text" name="ticketNumber" /><br />
+    Purchase Date:
+    <input type="text" name="purchaseDate" /><br />
+    Cancellation Date:
+    <input type="text" name="cancelDate" /><br />
+    Expiration Date:
+    <input type="text" name="expirationDate" /><br />
+    Credit Amount:
+    <input type="text" name="creditAmount" /><br />
+    Notes:
+    <input type="text" name="creditNotes" /><br />
+    <input type="submit" value="Edit Credit" />
+</form>
+
+</body>
+</html>

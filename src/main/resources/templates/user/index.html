@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<nav th:replace="fragments :: nav"></nav>
+
+<h1 th:text="${title}">My Credits</h1>
+
+<h3 th:unless="${users} and ${users.size()}">No users added.</h3>
+
+<a href="/user/signup">Add a user</a>
+<br /><br />
+
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Email</td>
+    </tr>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.email}"></td>
+    </tr>
+</table>
+
+
+</body>
+</html>

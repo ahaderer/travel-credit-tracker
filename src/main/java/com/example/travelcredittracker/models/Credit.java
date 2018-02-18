@@ -1,55 +1,73 @@
 package com.example.travelcredittracker.models;
 
 import javax.validation.constraints.NotNull;
-import java.util.Date;
+import javax.validation.constraints.Size;
+// import java.sql.Date;
 
+@SuppressWarnings("unused")
 public class Credit {
 
-//    private int id;
+    private int id;
+
+    private static int nextId = 1;
 
     @NotNull
+    @Size(min=5, message="Name must be at least 5 characters")
     private String traveler;
 
     @NotNull
+    @Size(min=1)
     private String airline;
 
-//    @NotNull
-//    private String confirmationNumber;
-//
-//    @NotNull
-//    private int ticketNumber;
-//
-//    @NotNull
-//    private Date purchDate;
-//
-//    @NotNull
-//    private Date cancelDate;
-//
-//    @NotNull
-//    private Date expirationDate;
-//
-//    @NotNull
-//    private int creditAmount;
-//
-//    private String creditNotes;
+    @NotNull
+    @Size(min=6, message="This field cannot be left blank")
+    private String confirmationNumber;
 
-    public Credit() {
-    }
+    @NotNull
+    private int ticketNumber;
 
-    // TODO: regular constructor??
-    public Credit(String traveler, String airline, String confirmationNumber, int ticketNumber, Date purchDate, Date cancelDate, Date expirationDate, int creditAmount, String creditNotes) {
+    @NotNull
+    @Size(min=1, message="This field cannot be left blank")
+    private String purchaseDate;
+
+    @NotNull
+    @Size(min=1, message="This field cannot be left blank")
+    private String cancelDate;
+
+    @NotNull
+    @Size(min=1, message="This field cannot be left blank")
+    private String expirationDate;
+
+    @NotNull
+    private double creditAmount;
+
+    private String creditNotes;
+
+    public Credit(String traveler, String airline, String confirmationNumber, int ticketNumber, String purchaseDate, String cancelDate, String expirationDate, double creditAmount, String creditNotes) {
+        this();
         this.traveler = traveler;
         this.airline = airline;
-//        this.confirmationNumber = confirmationNumber;
-//        this.ticketNumber = ticketNumber;
-//        this.purchDate = purchDate;
-//        this.expirationDate = expirationDate;
-//        this.creditAmount = creditAmount;
+        this.confirmationNumber = confirmationNumber;
+        this.ticketNumber = ticketNumber;
+        this.purchaseDate = purchaseDate;
+        this.cancelDate = cancelDate;
+        this.expirationDate = expirationDate;
+        this.creditAmount = creditAmount;
+        this.creditNotes = creditNotes;
     }
 
-//    public int getId() {
-//        return id;
-//    }
+    public Credit() {
+        id = nextId;
+        nextId++;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getTraveler() {
         return traveler;
@@ -66,60 +84,60 @@ public class Credit {
     public void setAirline(String airline) {
         this.airline = airline;
     }
-//
-//    public String getConfirmationNumber() {
-//        return confirmationNumber;
-//    }
-//
-//    public void setConfirmationNumber(String confirmationNumber) {
-//        this.confirmationNumber = confirmationNumber;
-//    }
-//
-//    public int getTicketNumber() {
-//        return ticketNumber;
-//    }
-//
-//    public void setTicketNumber(int ticketNumber) {
-//        this.ticketNumber = ticketNumber;
-//    }
-//
-//    public Date getPurchDate() {
-//        return purchDate;
-//    }
-//
-//    public void setPurchDate(Date purchDate) {
-//        this.purchDate = purchDate;
-//    }
-//
-//    public Date getCancelDate() {
-//        return cancelDate;
-//    }
-//
-//    public void setCancelDate(Date cancelDate) {
-//        this.cancelDate = cancelDate;
-//    }
-//
-//    public Date getExpirationDate() {
-//        return expirationDate;
-//    }
-//
-//    public void setExpirationDate(Date expirationDate) {
-//        this.expirationDate = expirationDate;
-//    }
-//
-//    public int getCreditAmount() {
-//        return creditAmount;
-//    }
-//
-//    public void setCreditAmount(int creditAmount) {
-//        this.creditAmount = creditAmount;
-//    }
-//
-//    public String getCreditNotes() {
-//        return creditNotes;
-//    }
-//
-//    public void setCreditNotes(String creditNotes) {
-//        this.creditNotes = creditNotes;
-//    }
+
+    public String getConfirmationNumber() {
+        return confirmationNumber;
+    }
+
+    public void setConfirmationNumber(String confirmationNumber) {
+        this.confirmationNumber = confirmationNumber;
+    }
+
+    public int getTicketNumber() {
+        return ticketNumber;
+    }
+
+    public void setTicketNumber(int ticketNumber) {
+        this.ticketNumber = ticketNumber;
+    }
+
+    public String getPurchaseDate() {
+        return purchaseDate;
+    }
+
+    public void setPurchaseDate(String purchaseDate) {
+        this.purchaseDate = purchaseDate;
+    }
+
+    public String getCancelDate() {
+        return cancelDate;
+    }
+
+    public void setCancelDate(String cancelDate) {
+        this.cancelDate = cancelDate;
+    }
+
+    public String getExpirationDate() {
+        return expirationDate;
+    }
+
+    public void setExpirationDate(String expirationDate) {
+        this.expirationDate = expirationDate;
+    }
+
+    public double getCreditAmount() {
+        return creditAmount;
+    }
+
+    public void setCreditAmount(double creditAmount) {
+        this.creditAmount = creditAmount;
+    }
+
+    public String getCreditNotes() {
+        return creditNotes;
+    }
+
+    public void setCreditNotes(String creditNotes) {
+        this.creditNotes = creditNotes;
+    }
 }

@@ -6,32 +6,53 @@
 
 <h1 th:text="${title}">Add A Travel Credit</h1>
 
-<!--
-<ul>
-    <li th:each="credit : ${credits}" th:text="${credit}"></li>
-</ul>
--->
-
-<form method="post">
-    Traveler Name:
-    <input type="text" name="traveler" /><br />
-    Airline:
-    <input type="text" name="airline" /><br />
-    <!--Confirmation #:-->
-    <!--<input type="text" name="confNumber" /><br />-->
-    <!--Ticket #:-->
-    <!--<input type="text" name="ticketNumber" /><br />-->
-    <!--Purchase Date:-->
-    <!--<input type="text" name="purchDate" /><br />-->
-    <!--Cancellation Date:-->
-    <!--<input type="text" name="cancelDate" /><br />-->
-    <!--Expiration Date:-->
-    <!--<input type="text" name="expDate" /><br />-->
-    <!--Credit Amount:-->
-    <!--<input type="text" name="creditAmount" /><br />-->
-    <!--Notes:-->
-    <!--<input type="text" name="creditNotes" /><br />-->
-    <input type="submit" value="Add Credit" />
+<form method="post" th:object="${credit}">
+    <div>
+        <label th:for="traveler">Traveler Name:</label>
+        <input th:field="*{traveler}" /><br />
+        <span th:errors="*{traveler}" class="error"></span>
+    </div>
+    <div>
+        <label th:for="airline">Airline:</label>
+        <input th:field="*{airline}" /><br />
+        <span th:errors="*{airline}" class="error"></span>
+    </div>
+    <div>
+        <label th:for="confirmationNumber">Confirmation #:</label>
+        <input th:field="*{confirmationNumber}" /><br />
+        <span th:errors="*{confirmationNumber}" class="error"></span>
+    </div>
+    <div>
+        <label th:for="ticketNumber">Ticket #:</label>
+        <input th:value="*{ticketNumber}" /><br />
+        <span th:errors="*{ticketNumber}" class="error"></span>
+    </div>
+    <div>
+        <label th:for="purchaseDate">Purchase Date:</label>
+        <input th:field="*{purchaseDate}" /><br />
+        <span th:errors="*{purchaseDate}" class="error"></span>
+    </div>
+    <div>
+        <label th:for="cancelDate">Cancellation Date:</label>
+        <input th:field="*{cancelDate}" /><br />
+        <span th:errors="*{cancelDate}" class="error"></span>
+    </div>
+    <div>
+        <label th:for="expirationDate">Expiration Date:</label>
+        <input th:field="*{expirationDate}" /><br />
+        <span th:errors="*{expirationDate}" class="error"></span>
+    </div>
+    <div>
+        <label th:for="creditAmount">Credit Amount:</label>
+        <input th:field="*{creditAmount}" /><br />
+        <span th:errors="*{creditAmount}" class="error"></span>
+    </div>
+    <div>
+        <label th:for="creditNotes">Notes:</label>
+        <input th:field="*{creditNotes}" /><br />
+        <span th:errors="*{creditNotes}" class="error"></span>
+    </div>
+        <input type="submit" value="Add Credit" />
 </form>
 
 </body>

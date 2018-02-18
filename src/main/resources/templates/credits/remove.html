@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<nav th:replace="fragments :: nav"></nav>
+
+<h1 th:text="${title}">Remove Credits</h1>
+
+<form method="post">
+    <div th:each="credit : ${credits}" class="checkbox">
+        <input type="checkbox" name="ids" th:value="${credit.id}" th:id="${credit.id}" />
+        <label th:for="${credit.id}" th:text="'Traveler: ' + ${credit.traveler} + ' // Airline: ' + ${credit.airline} + ' // Ticket #: ' + ${credit.ticketNumber}"></label>
+        <br />
+    </div>
+    <input type="submit" value="Remove Credit" />
+</form>
+
+</body>
+</html>
