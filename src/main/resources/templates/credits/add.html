@@ -6,6 +6,8 @@
 
 <h1 th:text="${title}">Add A Travel Credit</h1>
 
+ <!--TODO: Determine why adding model validation is causing ticket # & credit amount fields to malfunction-->
+
 <form method="post" th:object="${credit}">
     <div>
         <label th:for="traveler">Traveler Name:</label>
@@ -23,10 +25,15 @@
         <span th:errors="*{confirmationNumber}" class="error"></span>
     </div>
     <div>
-        <label th:for="ticketNumber">Ticket #:</label>
-        <input th:value="*{ticketNumber}" /><br />
+        <label for="ticketNumber">Ticket #:</label>
+        <input id="ticketNumber" type="text" name="ticketNumber" />
         <span th:errors="*{ticketNumber}" class="error"></span>
     </div>
+    <!--<div>-->
+        <!--<label th:for="ticketNumber">Ticket #:</label>-->
+        <!--<input th:value="*{ticketNumber}" /><br />-->
+        <!--<span th:errors="*{ticketNumber}" class="error"></span>-->
+    <!--</div>-->
     <div>
         <label th:for="purchaseDate">Purchase Date:</label>
         <input th:field="*{purchaseDate}" /><br />
