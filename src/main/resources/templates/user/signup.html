@@ -8,13 +8,25 @@
 
 <p>Please <a href="/user/login">login</a> if you already have an account.</p>
 
-<form method="post">
-    Email:
-    <input type="email" name="email" /><br />
-    Password:
-    <input type="password" name="password" /><br />
-    Confirm password:
-    <input type="password" name="verifyPassword" /><br />
+<p th:text="${pw_error}"></p>
+
+<form method="post" th:object="${user}">
+    <div>
+        <label th:for="email">Email:</label>
+        <input th:field="*{email}" /><br />
+        <span th:errors="*{email}" class="errors"></span>
+    </div>
+    <div>
+        <label th:for="password">Password:</label>
+        <input th:field="*{password}" type="password" /><br />
+        <span th:errors="*{password}" class="errors"></span>
+    </div>
+    <div>
+        <label th:for="verifyPassword">Confirm password:</label>
+        <input th:field="*{verifyPassword}" type="password" />
+        <span th:errors ="*{verifyPassword}" class="errors"></span>
+    </div>
+    <br />
     <input type="submit" value="Add User" />
 </form>
 

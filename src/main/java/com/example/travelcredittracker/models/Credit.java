@@ -1,50 +1,60 @@
 package com.example.travelcredittracker.models;
 
+import org.hibernate.validator.constraints.NotBlank;
+
+import javax.persistence.*;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-// import java.sql.Date;
 
 @SuppressWarnings("unused")
+@Entity
 public class Credit {
 
+    @Id
+    @GeneratedValue
     private int id;
 
-    private static int nextId = 1;
-
     @NotNull
-    @Size(min=5, message="Name must be at least 5 characters")
+    @Size(min=5, message="Traveler's name must be at least 5 characters")
     private String traveler;
 
-    @NotNull
-    @Size(min=1)
+    @NotNull(message="This field cannot be left blank")
+    @Size(min=3)
     private String airline;
 
     @NotNull
-    @Size(min=6, message="This field cannot be left blank")
+    @Size(min=6, message="This field must have at least 6 characters")
     private String confirmationNumber;
 
     @NotNull
     private int ticketNumber;
 
-    @NotNull
-    @Size(min=1, message="This field cannot be left blank")
+    @NotNull(message="This field cannot be left blank")
+    @NotBlank(message="Field must not be empty")
     private String purchaseDate;
 
-    @NotNull
-    @Size(min=1, message="This field cannot be left blank")
+    @NotNull(message="This field cannot be left blank")
+    @NotBlank(message="Email must not be empty")
     private String cancelDate;
 
-    @NotNull
-    @Size(min=1, message="This field cannot be left blank")
+    @NotNull(message="This field cannot be left blank")
+    @NotBlank(message="Email must not be empty")
     private String expirationDate;
 
-    @NotNull
+    @NotNull(message="This field cannot be left blank")
+    @Digits(integer=2, fraction=0)
     private double creditAmount;
 
     private String creditNotes;
 
+    @ManyToOne
+    private User user;
+
+    public Credit() {
+    }
+
     public Credit(String traveler, String airline, String confirmationNumber, int ticketNumber, String purchaseDate, String cancelDate, String expirationDate, double creditAmount, String creditNotes) {
-        this();
         this.traveler = traveler;
         this.airline = airline;
         this.confirmationNumber = confirmationNumber;
@@ -56,17 +66,8 @@ public class Credit {
         this.creditNotes = creditNotes;
     }
 
-    public Credit() {
-        id = nextId;
-        nextId++;
-    }
-
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getTraveler() {
@@ -84,6 +85,7 @@ public class Credit {
     public void setAirline(String airline) {
         this.airline = airline;
     }
+
 
     public String getConfirmationNumber() {
         return confirmationNumber;
