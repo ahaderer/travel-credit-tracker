@@ -25,15 +25,10 @@
         <span th:errors="*{confirmationNumber}" class="error"></span>
     </div>
     <div>
-        <label for="ticketNumber">Ticket #:</label>
-        <input id="ticketNumber" type="text" name="ticketNumber" />
+        <label th:for="ticketNumber">Ticket #:</label>
+        <input th:value="*{ticketNumber}" /><br />
         <span th:errors="*{ticketNumber}" class="error"></span>
     </div>
-    <!--<div>-->
-        <!--<label th:for="ticketNumber">Ticket #:</label>-->
-        <!--<input th:value="*{ticketNumber}" /><br />-->
-        <!--<span th:errors="*{ticketNumber}" class="error"></span>-->
-    <!--</div>-->
     <div>
         <label th:for="purchaseDate">Purchase Date:</label>
         <input th:field="*{purchaseDate}" /><br />
@@ -46,7 +41,7 @@
     </div>
     <div>
         <label th:for="expirationDate">Expiration Date:</label>
-        <input th:field="*{expirationDate}" /><br />
+        <input th:field="*{expirationDate}"  /><br />
         <span th:errors="*{expirationDate}" class="error"></span>
     </div>
     <div>
